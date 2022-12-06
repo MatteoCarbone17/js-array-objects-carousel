@@ -68,8 +68,13 @@ for (let i = 0; i < images.length; i++) {
    
    const currentImages = images[i].image;
 
-   console.log(currentImages)
+   console.log(currentImages);
+
    const divImgElement = document.createElement('div');
+
+   divImgElement.classList.add("my_carousel-item")
+
+   divImgElement.innerHTML+= '<img src="./img/' + {currentImages}+ '>'
 
    
 
