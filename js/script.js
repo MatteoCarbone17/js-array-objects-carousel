@@ -1,3 +1,28 @@
+/*Milestone 0:
+Popoliamo dinamicamente il contenuto del carosello con i dati forniti dall'array di oggetti,
+dal js (dentro al nostro 'carousel-item', per capirci).
+
+Milestone 1:
+Al click dell'utente sulle frecce verso l'alto o verso il basso, l'immagine attiva diventerà visibile.
+
+Milestone 2:
+Aggiungiamo alla visualizzazione delle immagini anche titolo e testo relative alla singola immagine.
+
+Bonus 1:
+Aggiungere il ciclo infinito del carosello. Ovvero se l'immagine attiva è la prima e l'utente clicca la freccia verso l'alto,
+l'immagine che deve attivarsi sarà l'ultima e viceversa per l'ultima immagine se l'utente clicca la freccia verso il basso.
+
+Bonus 2:
+Aggiungere le thumbnails (sottoforma di miniatura) ed al click attivare l’immagine corrispondente.
+
+Bonus 3:
+Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi) l’immagine attiva
+dovrà cambiare alla successiva.
+*/
+
+
+
+
 const images = [
    {
       image: 'img/01.webp',
@@ -25,3 +50,31 @@ const images = [
       text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
    }
 ];
+
+
+const divElement = document.getElementsByClassName('carousel-image');
+//console.log(divElement);
+
+const buttonNext = document.getElementsByClassName('button next');
+//console.log(buttonNext);
+
+const buttonPrevious = document.getElementsByClassName('button previous');
+//console.log(buttonPrevious);
+
+
+
+
+for (let i = 0; i < images.length; i++) {
+   
+   const currentImages = images[i].image;
+
+   console.log(currentImages)
+   const divImgElement = document.createElement('div');
+
+   
+
+   
+}
+
+
+ 
