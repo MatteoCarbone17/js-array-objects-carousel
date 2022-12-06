@@ -58,31 +58,44 @@ const divElement = document.getElementsByClassName('carousel-image');
 const buttonNext = document.getElementsByClassName('button next');
 //console.log(buttonNext);
 
-
-
-
 const buttonPrevious = document.getElementsByClassName('button previous');
 //console.log(buttonPrevious);
 
 
-const divImgElement = document.createElement('div');
-   
-   divImgElement.classList.add("my_carousel-item");
+/*let counter = 0 ; 
+
+buttonNext.addEventListener('click', function(){
+   if (counter > images.length -1) {
+      aggiunge la classe active
+      counter++
+      
+   }
+})*/
 
 
 
+/*buttonNext.addEventListener('click', function(){
+   if (counter < images.length -1) {
+      rimuovere la classe active
+      counter--
+      
+   }
+})*/
 
-let currentImages = ''
 
 for (let i = 0; i < images.length; i++) {
    
+   const divImgElement = document.createElement('div');
+   
+   divImgElement.classList.add("my_carousel-item");
+
    let currentImages = images[i].image;
    
    console.log(currentImages);
 
-
+   
 }
 
 
-divImgElement.innerHTML += `<img src="./${currentImages}">`
+
  
