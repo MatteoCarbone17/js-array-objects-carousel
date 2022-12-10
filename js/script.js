@@ -52,8 +52,10 @@ const images = [
 ];
 
 
-const divElement = document.getElementsByClassName('carousel-image');
-//console.log(divElement);
+const carouselContainer = document.querySelector('div.carousel-image');
+
+console.log(carouselContainer);
+
 
 const buttonNext = document.getElementsByClassName('button next');
 //console.log(buttonNext);
@@ -61,7 +63,25 @@ const buttonNext = document.getElementsByClassName('button next');
 const buttonPrevious = document.getElementsByClassName('button previous');
 //console.log(buttonPrevious);
 
+ 
 
+
+
+let activeIndex = 0; 
+
+images.forEach( (element , index)  => {
+   carouselContainer.innerHTML +=`
+      <div class="my_carousel-item">
+         <img src=${element.image}" alt="${element.title}">
+      </div>`
+
+   
+});
+
+document.getElementsByClassName('my_carousel-item')[activeIndex].classList.add('active')
+
+
+ 
 /*let counter = 0 ; 
 
 buttonNext.addEventListener('click', function(){
@@ -81,21 +101,3 @@ buttonNext.addEventListener('click', function(){
       
    }
 })*/
-
-
-for (let i = 0; i < images.length; i++) {
-   
-   const divImgElement = document.createElement('div');
-   
-   divImgElement.classList.add("my_carousel-item");
-
-   let currentImages = images[i].image;
-   
-   console.log(currentImages);
-
-   
-}
-
-
-
- 
