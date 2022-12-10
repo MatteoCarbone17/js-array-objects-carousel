@@ -57,11 +57,11 @@ const carouselContainer = document.querySelector('div.carousel-image');
 console.log(carouselContainer);
 
 
-const buttonNext = document.getElementsByClassName('button next');
-//console.log(buttonNext);
+const buttonNext = document.querySelector('div.button.next');
+console.log(buttonNext);
 
-const buttonPrevious = document.getElementsByClassName('button previous');
-//console.log(buttonPrevious);
+const buttonPrevious = document.querySelector('div.button.previous');
+console.log(buttonPrevious);
 
  
 
@@ -72,32 +72,42 @@ let activeIndex = 0;
 images.forEach( (element , index)  => {
    carouselContainer.innerHTML +=`
       <div class="my_carousel-item">
-         <img src=${element.image}" alt="${element.title}">
+         <img src=./${element.image}" alt="${element.title}">
       </div>`
 
    
 });
 
-document.getElementsByClassName('my_carousel-item')[activeIndex].classList.add('active')
+document.getElementsByClassName('my_carousel-item')[activeIndex].classList.add('active');
 
 
- 
-/*let counter = 0 ; 
-
-buttonNext.addEventListener('click', function(){
-   if (counter > images.length -1) {
-      aggiunge la classe active
-      counter++
-      
+buttonNext.addEventListener(('click'), function(){
+   document.querySelector('div.my_carousel-item.active').classList.remove('active');
+   
+   if (activeIndex >= 4) {
+      activeIndex = 0;
+   }else{
+      activeIndex = activeIndex + 1 ;
    }
-})*/
+    
+
+   document.querySelector('div.my_carousel-item')[activeIndex].classList.add('active');
+});
 
 
 
-/*buttonNext.addEventListener('click', function(){
-   if (counter < images.length -1) {
-      rimuovere la classe active
-      counter--
-      
+buttonPrevious.addEventListener(('click'), function(){
+   document.querySelector('div.my_carousel-item.active').classList.remove('active');
+   
+
+   if (activeIndex <= 0) {
+      activeIndex = 4;
+   }else{
+      activeIndex = activeIndex - 1 ;
    }
-})*/
+    
+
+   document.querySelector('div.my_carousel-item')[activeIndex].classList.add('active');
+});
+
+
