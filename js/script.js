@@ -72,8 +72,10 @@ let activeIndex = 0;
 images.forEach( (element , index)  => {
    carouselContainer.innerHTML +=`
       <div class="my_carousel-item">
-         <img src=./${element.image}" alt="${element.title}">
+         <img src=${element.image} alt="${element.title}">
       </div>`
+
+      console.log(element.image)
 
    
 });
