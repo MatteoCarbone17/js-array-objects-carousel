@@ -53,35 +53,32 @@ const images = [
 
 
 const carouselContainer = document.querySelector('div.carousel-image');
-
 console.log(carouselContainer);
 
 
-const buttonNext = document.querySelector('div.button.next');
-console.log(buttonNext);
 
-const buttonPrevious = document.querySelector('div.button.previous');
-console.log(buttonPrevious);
 
  
 
 
 
-let activeIndex = 0; 
+let activeIndex = 1; 
 
-images.forEach( (element , index)  => {
+images.forEach( (element)  => {
    carouselContainer.innerHTML +=`
       <div class="my_carousel-item">
          <img src=${element.image} alt="${element.title}">
       </div>`
 
-      console.log(element.image)
 
    
 });
 
 document.getElementsByClassName('my_carousel-item')[activeIndex].classList.add('active');
 
+
+const buttonNext = document.querySelector('div.button.next');
+console.log(buttonNext);
 
 buttonNext.addEventListener(('click'), function(){
    document.querySelector('div.my_carousel-item.active').classList.remove('active');
@@ -93,10 +90,13 @@ buttonNext.addEventListener(('click'), function(){
    }
     
 
-   document.querySelector('div.my_carousel-item')[activeIndex].classList.add('active');
+   document.getElementsByClassName('my_carousel-item')[activeIndex].classList.add('active');
 });
 
 
+
+const buttonPrevious = document.querySelector('div.button.previous');
+console.log(buttonPrevious);
 
 buttonPrevious.addEventListener(('click'), function(){
    document.querySelector('div.my_carousel-item.active').classList.remove('active');
@@ -109,7 +109,7 @@ buttonPrevious.addEventListener(('click'), function(){
    }
     
 
-   document.querySelector('div.my_carousel-item')[activeIndex].classList.add('active');
+   document.getElementsByClassName('my_carousel-item')[activeIndex].classList.add('active');
 });
 
 

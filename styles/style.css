@@ -54,7 +54,7 @@ div.my_carousel-item {
 }
 
 div.my_carousel-item.active {
-    display:block;
+    display:inline-block;
 }
 
 div.my_carousel-item img{
